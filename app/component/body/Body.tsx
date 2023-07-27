@@ -1,56 +1,56 @@
-"use client";
+"use client"
 
-import Image from "next/legacy/image";
-import Container from "../Container";
-import { ReactNode, forwardRef, useEffect, useRef } from "react";
+import Image from "next/legacy/image"
+import Container from "../Container"
+import { ReactNode, forwardRef, useEffect, useRef } from "react"
 
 const Body = () => {
-  const stepOne = useRef<HTMLDivElement>(null);
-  const stepTwo = useRef<HTMLDivElement>(null);
-  const stepThree = useRef<HTMLDivElement>(null);
-  const stepFour = useRef<HTMLDivElement>(null);
-  const stepFive = useRef<HTMLDivElement>(null);
-  const stepSix = useRef<HTMLDivElement>(null);
-  const stepSeven = useRef<HTMLDivElement>(null);
-  const stepEight = useRef<HTMLDivElement>(null);
-  const stepNine = useRef<HTMLDivElement>(null);
-  const textOne = useRef<HTMLDivElement>(null);
-  const textTwo = useRef<HTMLDivElement>(null);
-  const textThree = useRef<HTMLDivElement>(null);
-  const textFour = useRef<HTMLDivElement>(null);
-  const textFive = useRef<HTMLDivElement>(null);
-  const textSix = useRef<HTMLDivElement>(null);
-  const textSeven = useRef<HTMLDivElement>(null);
-  const textEight = useRef<HTMLDivElement>(null);
-  const textNine = useRef<HTMLDivElement>(null);
-  const textExtra = useRef<HTMLDivElement>(null);
-  const textExtra2 = useRef<HTMLDivElement>(null);
-  const textExtra3 = useRef<HTMLDivElement>(null);
+  const stepOne = useRef<HTMLDivElement>(null)
+  const stepTwo = useRef<HTMLDivElement>(null)
+  const stepThree = useRef<HTMLDivElement>(null)
+  const stepFour = useRef<HTMLDivElement>(null)
+  const stepFive = useRef<HTMLDivElement>(null)
+  const stepSix = useRef<HTMLDivElement>(null)
+  const stepSeven = useRef<HTMLDivElement>(null)
+  const stepEight = useRef<HTMLDivElement>(null)
+  const stepNine = useRef<HTMLDivElement>(null)
+  const textOne = useRef<HTMLDivElement>(null)
+  const textTwo = useRef<HTMLDivElement>(null)
+  const textThree = useRef<HTMLDivElement>(null)
+  const textFour = useRef<HTMLDivElement>(null)
+  const textFive = useRef<HTMLDivElement>(null)
+  const textSix = useRef<HTMLDivElement>(null)
+  const textSeven = useRef<HTMLDivElement>(null)
+  const textEight = useRef<HTMLDivElement>(null)
+  const textNine = useRef<HTMLDivElement>(null)
+  const textExtra = useRef<HTMLDivElement>(null)
+  const textExtra2 = useRef<HTMLDivElement>(null)
+  const textExtra3 = useRef<HTMLDivElement>(null)
 
   //새로고침 시, 스크롤 최상단이동
   useEffect(() => {
     window.onbeforeunload = function pushRefresh() {
-      window.scrollTo(0, 0);
-    };
-  }, []);
+      window.scrollTo(0, 0)
+    }
+  }, [])
 
   useEffect(() => {
-    let observer: IntersectionObserver;
+    let observer: IntersectionObserver
     if (stepOne.current) {
-      stepOne.current.classList.add("opacity-100");
+      stepOne.current.classList.add("opacity-100")
     }
 
     if (textExtra) {
       observer = new IntersectionObserver(
         async ([e]) => {
           if (e.isIntersecting && stepOne.current && stepTwo.current) {
-            stepOne.current.classList.add("opacity-100");
-            stepTwo.current.classList.remove("opacity-100");
+            stepOne.current.classList.add("opacity-100")
+            stepTwo.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textExtra.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textExtra.current as Element)
     }
     if (textTwo) {
       observer = new IntersectionObserver(
@@ -61,15 +61,15 @@ const Body = () => {
             stepTwo.current &&
             stepThree.current
           ) {
-            stepOne.current.classList.remove("opacity-100");
-            stepTwo.current.classList.add("opacity-100");
-            stepThree.current.classList.remove("opacity-100");
+            stepOne.current.classList.remove("opacity-100")
+            stepTwo.current.classList.add("opacity-100")
+            stepThree.current.classList.remove("opacity-100")
           }
         },
 
-        { threshold: 1 }
-      );
-      observer.observe(textTwo.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textTwo.current as Element)
     }
     if (textExtra2) {
       observer = new IntersectionObserver(
@@ -80,14 +80,14 @@ const Body = () => {
             stepTwo.current &&
             stepThree.current
           ) {
-            stepTwo.current.classList.add("opacity-100");
-            stepThree.current.classList.remove("opacity-100");
+            stepTwo.current.classList.add("opacity-100")
+            stepThree.current.classList.remove("opacity-100")
           }
         },
 
-        { threshold: 1 }
-      );
-      observer.observe(textExtra2.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textExtra2.current as Element)
     }
 
     if (textThree) {
@@ -102,14 +102,14 @@ const Body = () => {
             // stepTwo.current.style.cssText = "display:none";
             // stepThree.current.style.cssText = "display:block";
             // stepFour.current.style.cssText = "display:none";
-            stepTwo.current.classList.remove("opacity-100");
-            stepThree.current.classList.add("opacity-100");
-            stepFour.current.classList.remove("opacity-100");
+            stepTwo.current.classList.remove("opacity-100")
+            stepThree.current.classList.add("opacity-100")
+            stepFour.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textThree.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textThree.current as Element)
     }
     if (textFour) {
       observer = new IntersectionObserver(
@@ -120,14 +120,14 @@ const Body = () => {
             stepFour.current &&
             stepFive.current
           ) {
-            stepThree.current.classList.remove("opacity-100");
-            stepFour.current.classList.add("opacity-100");
-            stepFive.current.classList.remove("opacity-100");
+            stepThree.current.classList.remove("opacity-100")
+            stepFour.current.classList.add("opacity-100")
+            stepFive.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textFour.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textFour.current as Element)
     }
     if (textExtra3) {
       observer = new IntersectionObserver(
@@ -138,13 +138,13 @@ const Body = () => {
             stepFour.current &&
             stepFive.current
           ) {
-            stepThree.current.classList.add("opacity-100");
-            stepFour.current.classList.remove("opacity-100");
+            stepThree.current.classList.add("opacity-100")
+            stepFour.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textExtra3.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textExtra3.current as Element)
     }
     if (textFive) {
       observer = new IntersectionObserver(
@@ -155,14 +155,14 @@ const Body = () => {
             stepFive.current &&
             stepSix.current
           ) {
-            stepFour.current.classList.remove("opacity-100");
-            stepFive.current.classList.add("opacity-100");
-            stepSix.current.classList.remove("opacity-100");
+            stepFour.current.classList.remove("opacity-100")
+            stepFive.current.classList.add("opacity-100")
+            stepSix.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textFive.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textFive.current as Element)
     }
     if (textSix) {
       observer = new IntersectionObserver(
@@ -173,14 +173,14 @@ const Body = () => {
             stepSix.current &&
             stepSeven.current
           ) {
-            stepFive.current.classList.remove("opacity-100");
-            stepSix.current.classList.add("opacity-100");
-            stepSeven.current.classList.remove("opacity-100");
+            stepFive.current.classList.remove("opacity-100")
+            stepSix.current.classList.add("opacity-100")
+            stepSeven.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textSix.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textSix.current as Element)
     }
     if (textSeven) {
       observer = new IntersectionObserver(
@@ -192,14 +192,14 @@ const Body = () => {
             stepEight.current
           ) {
             // stepOne.current.classList.remove("opacity-100");
-            stepSix.current.classList.remove("opacity-100");
-            stepSeven.current.classList.add("opacity-100");
-            stepEight.current.classList.remove("opacity-100");
+            stepSix.current.classList.remove("opacity-100")
+            stepSeven.current.classList.add("opacity-100")
+            stepEight.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textSeven.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textSeven.current as Element)
     }
     if (textEight) {
       observer = new IntersectionObserver(
@@ -211,31 +211,30 @@ const Body = () => {
             stepNine.current
           ) {
             // stepOne.current.classList.remove("opacity-100");
-            stepSeven.current.classList.remove("opacity-100");
-            stepEight.current.classList.add("opacity-100");
-            stepNine.current.classList.remove("opacity-100");
-            console.log("야호");
+            stepSeven.current.classList.remove("opacity-100")
+            stepEight.current.classList.add("opacity-100")
+            stepNine.current.classList.remove("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textEight.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textEight.current as Element)
     }
     if (textNine) {
       observer = new IntersectionObserver(
         async ([e]) => {
           if (e.isIntersecting && stepEight.current && stepNine.current) {
             // stepOne.current.classList.remove("opacity-100");
-            stepEight.current.classList.remove("opacity-100");
-            stepNine.current.classList.add("opacity-100");
+            stepEight.current.classList.remove("opacity-100")
+            stepNine.current.classList.add("opacity-100")
           }
         },
-        { threshold: 1 }
-      );
-      observer.observe(textNine.current as Element);
+        { threshold: 1 },
+      )
+      observer.observe(textNine.current as Element)
     }
-    return () => observer.disconnect();
-  }, []);
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
@@ -347,19 +346,19 @@ const Body = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Body;
+export default Body
 
 interface ImageListProps {
-  src: string;
+  src: string
 }
 
 const ImageList = forwardRef<HTMLDivElement, ImageListProps>(({ src }, ref) => {
   return (
     <div
-      className=" absolute w-[100vw] opacity-0 
+      className=" absolute w-[100vw] 2xl:w-[60vw] opacity-0 
     transition-opacity duration-500 ease-in-out
     "
       ref={ref}
@@ -368,18 +367,18 @@ const ImageList = forwardRef<HTMLDivElement, ImageListProps>(({ src }, ref) => {
         src={src}
         alt=""
         layout="responsive"
-        width={90}
-        height={50}
+        width={100}
+        height={76}
         priority
       />
     </div>
-  );
-});
+  )
+})
 
-ImageList.displayName = "scrollImage";
+ImageList.displayName = "scrollImage"
 
 interface TextWrapperProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const TextWrapper = forwardRef<HTMLDivElement, TextWrapperProps>(
@@ -395,8 +394,8 @@ const TextWrapper = forwardRef<HTMLDivElement, TextWrapperProps>(
           {children}
         </div>
       </div>
-    );
-  }
-);
+    )
+  },
+)
 
-TextWrapper.displayName = "scrollText";
+TextWrapper.displayName = "scrollText"
