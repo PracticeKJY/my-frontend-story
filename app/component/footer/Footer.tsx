@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
         <div
-          className="m-10 px-5 
+          className="mt-10 px-5 
       flex flex-col 
       w-[300px] sm:w-[500px]"
         >
@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
