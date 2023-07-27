@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Pretendard: ["Pretendard-Regular"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -24,4 +27,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
