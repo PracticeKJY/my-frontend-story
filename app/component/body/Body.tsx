@@ -394,7 +394,7 @@ const TextWrapper = forwardRef<HTMLDivElement, TextWrapperProps>(
   ({ children }, ref) => {
     return (
       <div
-        className="mb-[50vh] px-4 py-8 
+        className="mb-[60vh] px-4 py-8 
     flex flex-col 
     opacity-90 "
         ref={ref}
